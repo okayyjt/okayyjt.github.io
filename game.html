@@ -1,1 +1,25 @@
-
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UNO Game</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1>UNO Game</h1>
+    <div id="game-board">
+        <div id="player-hands">
+            <div class="player-hand" id="player1-hand"></div>
+            <div class="player-hand" id="player2-hand"></div>
+        </div>
+        <div id="draw-pile">Draw Pile</div>
+        <div id="discard-pile">Discard Pile</div>
+    </div>
+    <div id="game-controls">
+        <button onclick="drawCard()">Draw Card</button>
+        <button onclick="playCard()">Play Card</button>
+    </div>
+    <script src="game.js"></script>
+</body>
+</html>
