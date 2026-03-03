@@ -3,19 +3,62 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>UNO Online</title>
-    <link rel="stylesheet" href="styles.css">
-    <script src="script.js" defer></script>
+    <title>UNO Game Homepage</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            background-color: #f0f0f0;
+            font-family: Arial, sans-serif;
+        }
+        #logo {
+            width: 300px;
+            animation: spin 2s linear infinite;
+        }
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        button {
+            padding: 10px 20px;
+            margin: 10px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        #soundToggle {
+            background-color: #007bff;
+            border: none;
+            color: white;
+        }
+        #playButton {
+            background-color: #28a745;
+            border: none;
+            color: white;
+        }
+    </style>
 </head>
 <body>
-    <div class="container">
-        <div class="logo">
-            <img src="animated-logo.gif" alt="UNO Logo" />
-        </div>
-        <div class="controls">
-            <button id="sound-toggle">Toggle Sound</button>
-            <a href="choose.html" class="play-button">PLAY</a>
-        </div>
-    </div>
+    <img id="logo" src="path_to_uno_logo.png" alt="UNO Logo">
+    <button id="soundToggle">Toggle Sound</button>
+    <button onclick="window.open('https://github.com/okayyjt/okayyjt.github.io', '_blank')">GitHub</button>
+    <button id="playButton">PLAY</button>
+
+    <script>
+        let isSoundOn = true;
+        const soundToggleButton = document.getElementById('soundToggle');
+
+        soundToggleButton.addEventListener('click', function() {
+            isSoundOn = !isSoundOn;
+            soundToggleButton.textContent = isSoundOn ? 'Sound ON' : 'Sound OFF';
+            // Add sound management functionality here
+        });
+
+        document.getElementById('playButton').addEventListener('click', function() {
+            window.location.href = 'choose.html';
+        });
+    </script>
 </body>
 </html>
