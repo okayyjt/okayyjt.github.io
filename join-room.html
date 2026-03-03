@@ -1,1 +1,53 @@
-
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Join Room</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <style>
+        /* UNO theme styling */
+        body {
+            background-color: #f3f4f6;
+            color: #374151;
+        }
+        .container {
+            max-width: 400px;
+            margin: auto;
+            padding: 2rem;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 class="text-center text-2xl font-semibold mb-6">Join Room</h1>
+        <form id="joinRoomForm">
+            <div class="mb-4">
+                <label for="roomCode" class="block text-sm font-medium text-gray-700">Room Code</label>
+                <input type="text" id="roomCode" name="roomCode" required
+                       class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm p-2" placeholder="Enter room code">
+            </div>
+            <div class="mb-4">
+                <label for="playerName" class="block text-sm font-medium text-gray-700">Player Name</label>
+                <input type="text" id="playerName" name="playerName" required
+                       class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm p-2" placeholder="Enter your name">
+            </div>
+            <button type="submit" class="w-full bg-blue-500 text-white font-semibold py-2 rounded-md hover:bg-blue-600">Join Room</button>
+        </form>
+    </div>
+    <script>
+        document.getElementById('joinRoomForm').addEventListener('submit', function(event) {
+            const roomCode = document.getElementById('roomCode').value;
+            const playerName = document.getElementById('playerName').value;
+            if (roomCode === '' || playerName === '') {
+                alert('Please fill in all fields.');
+                event.preventDefault();
+            }
+            // Additional validation can be added here
+        });
+    </script>
+</body>
+</html>
